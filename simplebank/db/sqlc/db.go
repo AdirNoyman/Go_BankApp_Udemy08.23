@@ -16,11 +16,13 @@ type DBTX interface {
 	QueryRowContext(context.Context, string, ...interface{}) *sql.Row
 }
 
+// DBTX represents the database connection
 func New(db DBTX) *Queries {
 	return &Queries{db: db}
 }
 
 type Queries struct {
+	// DBTX represents the database connection
 	db DBTX
 }
 
